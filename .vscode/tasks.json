@@ -7,13 +7,10 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${workspaceFolder}/main.cpp",
-                "${workspaceFolder}/game.cpp",
-                "${workspaceFolder}/narrative.cpp",
-                "${workspaceFolder}/loot.cpp",
-                "${workspaceFolder}/inventory.cpp",
                 "-o",
-                "${workspaceFolder}/game.exe"
+                "${workspaceFolder}/a.exe",
+                "${workspaceFolder}/*.cpp",
+
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

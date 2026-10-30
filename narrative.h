@@ -6,6 +6,7 @@ class Narrative{
 private:
     void outside_house();
     void dialogueOneA();
+    void dialogueTwoA();
 public:
     Narrative();
     ~Narrative();

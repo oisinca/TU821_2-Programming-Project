@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+#include "gunsNArmour.h"
+#include "inventory.h"
 
 using namespace std;
 
@@ -13,7 +15,8 @@ private:
 
     string new_item;
     int new_item_num;
-    void check_inventory();
+    Inventory inventory;
+    void check_inventory(const GunsNArmour& item);
 
 
 public:

@@ -38,7 +38,7 @@ void Narrative::intro()
         cout << "Open (o)\nExit(e)\n";
         cin >> choice;
         choice = tolower(choice);  
-        if (choice == !'o' && choice == !'c')
+        if (choice != 'o' && choice != 'c')
             {
                 cerr << "Invalid input please try again\n";
                 cont_clr();
@@ -78,15 +78,17 @@ void Narrative::outside_house()
     switch (choice)
     {
         case 'a':
+        system("cls");
            dialogueOneA();
            break;
         case 'r':
             cout << "You have chosen to run away\n";
-            cont_clr();
+          cont_clr();    //Doill or Jack you can maybe add your sequences here
             break;
     }
- 
     
+    cout << "You have entered the town, and see the big red wooden building the cowboy was talking about\n";
+
 }
 
 void Narrative::cont_clr()
@@ -96,12 +98,48 @@ void Narrative::cont_clr()
     system("cls");
 }
 
+void Narrative::dialogueTwoA()
+{
+    char choice;
+    cout << "Path Option:\n(A)Go to the bar\n(B)Go to the sheriff's office\n";
+    cin >> choice;
+    choice = tolower(choice);
+    switch (choice)
+    {
+        case 'a':
+            cout << "You have chosen to go to the bar\n";
+            cont_clr();
+            //Bar sequence here
+            break;
+        case 'b':
+            cout << "You have chosen to go to the sheriff's office\n";
+            cont_clr();
+            //Sheriff's office sequence here
+            break;
+    }
+}
 
 void Narrative::dialogueOneA()
 {
-        system("cls");
-        cout << "One of the men tells you theres been a shootout in the bar\n\n";
-        cout << "DIALOGUE OPTION:\n";
-        cout << "'Why was there a shootout?' (w)\n";
-        cout << "'Where is the bar?' (b)\n";
+    char choice;
+    system("cls");
+    cout << "'Theres been a shootout in the bar' - Passing Cowboy\n\n";
+    cout << "DIALOGUE OPTION:\n";
+    cout << "'Why was there a shootout?' (w)\n";
+    cout << "'Where is the bar?' (b)\n";
+    cin >> choice;
+    choice = tolower(choice);
+    switch (choice)
+    {
+        case 'w':
+            cout << "'I don't know, Theres always shootouts at the bar' - Passing Cowboy\n";
+            system("pause");
+            cout << "'I guess I should go check it out' - You\n";
+
+        case 'b':
+            cout << "'Its the big red wooden building in the middle of town'\n'You can't miss it' - Passing Cowboy\n";
+            system("pause");
+            cout << "'I guess I should go check it out' - You\n";
+
+    }
 }

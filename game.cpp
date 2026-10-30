@@ -34,12 +34,9 @@ Game::~Game()
 void Game::Run()
 {
     if (!Initl())
-        g_isRunning = false;
-
-    while (g_isRunning)
     {
-     ProcInpts();
-     Update();
-     Draw();   
+        return;
     }
+
+    Draw();
 }
