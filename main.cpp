@@ -7,7 +7,7 @@
 
 //Main Function
 int main(){
-    Game game;
-    game.Run();
+    Game game;  //initialize game object
+    game.Run(); //begin game loop (go to game.cpp to see the game loop)
 return 0;
 }
