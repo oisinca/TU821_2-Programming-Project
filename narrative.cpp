@@ -209,6 +209,7 @@ void Narrative::DoillSequence()
 {
 //Doill sequence here
 cout << "is this working\n";
+cout << "is it stillworkinhg ";
 }
 
 char Narrative::typingText(std::string text, int delay)
