@@ -46,7 +46,7 @@ void Narrative::intro() //intro sequence of the game, this is the first part of 
         cout << typingText("Would you like to open it, or exit through the front door?",5) << endl;
         cout << typingText("Open (O)",1) << "\n"<< typingText("\nExit(E)\n",1)<< endl; //First dialogue option
         cin >> choice;
-
+        // error checking code:
         choice = tolower(choice);  
         if (choice != 'o' && choice != 'e')
             {
@@ -87,6 +87,7 @@ void Narrative::outside_house()
     cout << "Ask (a)\nRun (r)\n";
     //dialogue was changed from this to being done in functions below, its much cleaner i advise you do the same
     cin >> choice;
+    // write error checking code:
     choice = tolower(choice);
     //must add input checking to make sure the user inputs a valid option, if not it will ask them to try again.
     switch (choice)
@@ -130,6 +131,7 @@ void Narrative::dialogueOneA()
     cout << "'Why was there a shootout?' (w)\n";
     cout << "'Where is the bar?' (b)\n";
     cin >> choice;
+    // error checking code:
     choice = tolower(choice);
     //must add input checking to make sure the user inputs a valid option, if not it will ask them to try again.
     switch (choice)
@@ -156,6 +158,7 @@ void Narrative::minidialogue()
     cout << "'Where is the bar?' (b)\n";
     cout << " 'Run away' (r)\n";
     cin >> choice;
+    // error checking code
     choice = tolower(choice);
     //must add input checking to make sure the user inputs a valid option, if not it will ask them to try again.
     switch (choice)
@@ -183,6 +186,7 @@ void Narrative::dialogueTwoA()
     char choice;
     cout << "Path Option:\n(A)Go to the bar\n(B)Go inside the Sheriff's office and ask why they arent doing anything\n";
     cin >> choice;
+    //error checking code
     choice = tolower(choice);
     //must add input checking to make sure the user inputs a valid option, if not it will ask them to try again.
     switch (choice)

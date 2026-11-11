@@ -35,35 +35,31 @@ void Game::ProcInpts()
 
     if (currentState == MENU)
     {
-        // in the menu if the user types letters instead of numbers
-        int choice = 0;
-        if (!(cin >> choice))
-        {
-            cin.clear(); // reset cin
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clear previous inputs
-            cout << "\nInvalid input: Please choose 1, 2, 3 or 4 " << endl;
-            return; // goes back to the start of the loop
-        }
+        // in the menu if the user types letters instead of numbers(error checking)
+        char key = _getch();
+       do{
+            if (key != 49 && key != 50 && key != 51 && key != 52)
+            {
+                cerr << "Invalid input entered.\nPlease try again.\n ";
+            }
 
-        switch(choice)
-        {
-            case 1:
+            switch(key)
+            {
+            case 49:
                 currentState = Play;
                 break;
-            case 2:
+            case 50:
                 currentState = Instructions;
                 break;
-            case 3:
+            case 51:
                 currentState = Settings;
                 break;
-            case 4:
+            case 52:
                 currentState = Exit;
                 g_isRunning = false;
                 break;
-            default: // like an "else" handles all invalid NUMBER inputs.
-                cout << "\nInvalid choice: Please choose 1, 2, 3 or 4";
-                break;
         }
+        }while(key != 49 && key != 50 && key != 51 && key != 52);
        
     }
 
