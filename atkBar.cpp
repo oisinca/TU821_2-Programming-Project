@@ -1,4 +1,4 @@
-#include "game.h"
+#include "AtkBar.h"
 
 //oc
 int AtkBar::initAttkBar()
@@ -116,7 +116,6 @@ COORD pos;
     SetConsoleCursorPosition(handle, pos);
     std::cout << getBarCasingEnd();
 
-//generate random position for attack area [Will make this its own function later]
     randAttackArea();
     pos.X = getAttackPoint1();
     pos.Y = getY() + 1;
@@ -138,8 +137,7 @@ COORD pos;
 
 void AtkBar::randAttackArea()
 {
-    srand(time(0));
-    firstAttackPoint = rand() %7;
+    firstAttackPoint = rand() %6 + 1;
     secondAttackPoint = firstAttackPoint + 3;
 }
 

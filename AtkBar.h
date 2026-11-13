@@ -1,6 +1,8 @@
 #pragma once
 
-#include "game.h"
+#include <iostream>
+#include <windows.h>
+#include <conio.h>
 
 //oc
 class AtkBar

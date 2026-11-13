@@ -77,14 +77,14 @@ void Narrative::outside_house()
     char choice;
     cout << typingText("You have exited the house and are now in the desert\n",5);
     cont_clr();
-    cout << "You see a small town in the distance, you walk towards it\n";
+    cout << typingText("You see a small town in the distance, you walk towards it\n",5);
     cont_clr();
-    cout << "The air is dry and hot, you can feel the sweat dripping down your face\n";
+    cout << typingText("The air is dry and hot, you can feel the sweat dripping down your face\n",5);
     cont_clr();
-    cout << "You hear a gunshot in the distance, you look around and see a small group of people running towards you\n\n";
-    cout << "DIALOGUE OPTION:\n";
-    cout << "Would you like to ask them what's going on, or run away?\n";
-    cout << "Ask (a)\nRun (r)\n";
+    cout << typingText("You hear a gunshot in the distance, you look around and see a small group of people running towards you\n\n",5);
+    cout << typingText("DIALOGUE OPTION:\n",1);
+    cout << typingText("Would you like to ask them what's going on, or run away?\n",1);
+    cout << typingText("Ask (a)\n Run (r)\n",1);
     //dialogue was changed from this to being done in functions below, its much cleaner i advise you do the same
     cin >> choice;
     choice = tolower(choice);
@@ -97,19 +97,19 @@ void Narrative::outside_house()
             break;
         case 'r':
             system("cls");
-            cout << "You have chosen to run away\n";
+            cout << typingText("You have chosen to run away\n",5);
             cont_clr();    
             ranAway();
             return;
     }
     
-    cout << "You have entered the town, and see the big red wooden building the cowboy was talking about\n";
+    cout << typingText("You have entered the town, and see the big red wooden building the cowboy was talking about\n",5);
     cont_clr();
-    cout << "You can smell the gunpowder in the air, and see smoke rising from behind the bar.\n";
+    cout << typingText("You can smell the gunpowder in the air, and see smoke rising from behind the bar.\n",5);
     cont_clr();
-    cout << "You can hear the sound of gunfire and shouting coming from inside the bar.\n";
+    cout << typingText("You can hear the sound of gunfire and shouting coming from inside the bar.\n",5);
     cont_clr();
-    cout << "You look to your right and see the sheriff's station.";
+    cout << typingText("You look to your right and see the sheriff's station.",5);
     cont_clr();
     dialogueTwoA();
 }
@@ -125,10 +125,10 @@ void Narrative::dialogueOneA()
 {
     char choice;
     system("cls");
-    cout << "'Theres been a shootout in the bar.' - Passing Cowboy\n\n";
-    cout << "DIALOGUE OPTION:\n";
-    cout << "'Why was there a shootout?' (w)\n";
-    cout << "'Where is the bar?' (b)\n";
+    cout << typingText("'Theres been a shootout in the bar.' - Passing Cowboy\n\n",5);
+    cout << typingText("DIALOGUE OPTION:\n",1);
+    cout << typingText("'Why was there a shootout?' (w)\n",1);
+    cout << typingText("'Where is the bar?' (b)\n",1);
     cin >> choice;
     choice = tolower(choice);
     //must add input checking to make sure the user inputs a valid option, if not it will ask them to try again.
@@ -136,15 +136,15 @@ void Narrative::dialogueOneA()
     {
         case 'w':
             system("cls");
-            cout << "'I don't know. \nTheres always shootouts at the bar' - Passing Cowboy\n";
+            cout << typingText("'I don't know. \n'Theres always shootouts at the bar'\n 'But I sure as hell ain't stickin' around!' - Passing Cowboy\n",5);
             system("pause");
             minidialogue();
             break;
         case 'b':
             system("cls");
-            cout << "'Its the big red wooden building in the middle of town'\n'You can't miss it' - Passing Cowboy\n\n";
+            cout << typingText("'Its the big red wooden building in the middle of town'\n'You can't miss it' - Passing Cowboy\n\n",5);
             cont_clr();
-            cout << "'I guess I should go check it out' - You\n";
+            cout << typingText("'I guess I should go check it out' - You\n",5);
             cont_clr();
             break;
     }
@@ -152,9 +152,9 @@ void Narrative::dialogueOneA()
 void Narrative::minidialogue()
 {
     char choice;
-    cout << "DIALOGUE OPTION:\n";
-    cout << "'Where is the bar?' (b)\n";
-    cout << " 'Run away' (r)\n";
+    cout << typingText("DIALOGUE OPTION:\n",1);
+    cout << typingText("'Where is the bar?' (b)\n",1);
+    cout << typingText(" 'Run away' (r)\n",1);
     cin >> choice;
     choice = tolower(choice);
     //must add input checking to make sure the user inputs a valid option, if not it will ask them to try again.
@@ -162,14 +162,14 @@ void Narrative::minidialogue()
     {
         case 'b':
             system("cls");
-            cout << "'Its the big red wooden building in the middle of town'\n'You can't miss it' - Passing Cowboy\n";
+            cout << typingText("'Its the big red wooden building in the middle of town'\n'You can't miss it' - Passing Cowboy\n",5);
             system("pause");
-            cout << "'I guess I should go check it out' - You\n";
+            cout << typingText("'I guess I should go check it out' - You\n",5);
             cont_clr();
             break;
         case 'r':
             system("cls");
-            cout << "You have chosen to run away\n";
+            cout << typingText("You have chosen to run away\n",5);
             cont_clr();    
             //Doill or Jack you can maybe add your sequences here
             
@@ -181,7 +181,7 @@ void Narrative::minidialogue()
 void Narrative::dialogueTwoA()
 {
     char choice;
-    cout << "Path Option:\n(A)Go to the bar\n(B)Go inside the Sheriff's office and ask why they arent doing anything\n";
+    cout << typingText("Path Option:\n(A)Go to the bar\n(B)Go inside the Sheriff's office and ask why they arent doing anything\n",1);
     cin >> choice;
     choice = tolower(choice);
     //must add input checking to make sure the user inputs a valid option, if not it will ask them to try again.
@@ -189,14 +189,14 @@ void Narrative::dialogueTwoA()
     {
         case 'a':
             system("cls");
-            cout << "You have chosen to go to the bar\n";
+            cout << typingText("You have chosen to go into the bar\n",5);
             cont_clr();
             //Bar sequence here
 
             break;
         case 'b':
             system("cls");
-            cout << "You have chosen to go to the sheriff's office\n"; 
+            cout << typingText("You have chosen to go to the sheriff's office\n",5); 
             //doesnt have to be sherriffs, could be whatever you want it to be, just make sure to change the text in the cout statement above
             cont_clr();
             //Sheriff's office sequence here
@@ -206,7 +206,7 @@ void Narrative::dialogueTwoA()
 
 void Narrative::ranAway()
 {
-    cout << typingText("You flee into the crowd and disappear before the cowboy can catch up.",10)<<"\n";
+    cout << typingText("You flee into the crowd and disappear before the cowboy can catch up.",5)<<"\n";
     cont_clr();
 }
 

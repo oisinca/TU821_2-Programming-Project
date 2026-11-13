@@ -23,7 +23,7 @@ public:
     Loot();
     ~Loot();
     Loot(string x, int y); // input type of looting menu, and what level its at eg chest 1, boss 2 etc. 
-
+    short const INV_SLOT = 3;
     string items[3] = {"Empty","Empty","Empty"}; // 0 = empty, 1 = revolver, 2 = sawed-off shotgun
 
 };

@@ -1,6 +1,8 @@
 #pragma once
 
-#include "game.h"
+#include <iostream>
+
+#include "HeadsOrTails.h"
 
 class Publican
 {
