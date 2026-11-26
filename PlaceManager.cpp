@@ -2,18 +2,12 @@
 
 PlaceManager::PlaceManager()
 {
-    for(int i = 0; i < 5; i++)
-    {
-        places[i] = nullptr;
-    }
+    
 }
 
 PlaceManager::~PlaceManager()
 {
-      for(int i = 0; i < 5; i++)
-    {
-        delete places[i];
-    }
+    
 }
 //Places place[5] = {home, bar, church, shticks, cave};
 //FILESYO(place[5])
@@ -22,32 +16,19 @@ PlaceManager::~PlaceManager()
 // {
 //      DO HOME STUFF
 // }
-void PlaceManager::Home()
-{
-    places[0] = new Place("Home", " A warmly lit room");
-}
 
-void PlaceManager::Bar()
-{
-    places[1] = new Place("Bar", "A rowdy tavern");
-
-}
-
-void PlaceManager::Church()
-{
-    places[2] = new Place("Church", "A holy building");
-}
-
-void PlaceManager::theShticks()
-{
-    places[3] = new Place("TheShticks", "The scortching outback");
-}
-
-void PlaceManager::Cave()
-{
-    places[4] = new Place("The Cave", "Paul's residence");
-}
-
+// assigns a location to each position in the array
 void PlaceManager::createPlaces()
+{   
+    places[0] = Place("Home", "The hunt begins");
+    places[1] = Place("The Bar", "A local tavern");
+    places[2] = Place("The Shticks", "The outback");
+    places[3] = Place("The Church", "An old church");
+    places[4] = Place("The Cave", "Paul's residence");
+}
+
+// returns the place object at the requested index
+Place PlaceManager::getPlace(int index)
 {
+    return places[index];
 }

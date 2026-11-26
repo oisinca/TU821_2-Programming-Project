@@ -12,6 +12,7 @@ using namespace std;
 
 bool Game::Initl()
 {
+    manager.createPlaces(); // creates the 5 places when the game starts
     return true;
 }
 
@@ -95,6 +96,7 @@ void Game::Draw()
     {
         Inventory inventory;
         Narrative narrate;
+        startAdventure(); //starts the game
     }
     else if (currentState == Instructions)
     {
@@ -117,6 +119,34 @@ void Game::Draw()
         Inventory inv;
         inv.take();
     }
+}
+
+void Game::startAdventure()
+{
+    // HOME
+    Place currentPlace = manager.getPlace(0);
+    currentPlace.displayPlace();
+    story.homeDialougue();
+
+    // BAR
+    currentPlace = manager.getPlace(1);
+    currentPlace.displayPlace();
+    story.barDialogue();
+
+    // SHTICKS
+    currentPlace = manager.getPlace(2);
+    currentPlace.displayPlace();
+    story.shticksDialogue();
+    
+    // CHURCH
+    currentPlace = manager.getPlace(3);
+    currentPlace.displayPlace();
+    story.churchDialogue();
+
+    // CAVE
+    currentPlace = manager.getPlace(4);
+    currentPlace.displayPlace();
+    story.caveDialogue();
 }
 
 Game::Game()
@@ -142,6 +172,7 @@ void Game::Run()
 
         if (currentState == Play || currentState == DEVSKIPPER)
         {
+
             currentState = MENU;
             continue;
         }

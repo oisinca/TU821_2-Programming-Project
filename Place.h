@@ -1,4 +1,5 @@
 // Place.h defines what and indivual location containes
+// stores the location's names and descriptions
 #pragma once
 
 #include <iostream>
@@ -12,21 +13,20 @@ using namespace std;
 class Place
 {
 private:
-    string PlaceName;
-    string PlaceDescription;
+    string PlaceName;  // stores name of the location
+    string PlaceDescription; // stores the description of place
+
 
 public:
-    Place();
-    Place(string name, string desc);
-
-    ~Place();
+    Place(); // default constructor
+    Place(string name, string desc); // overloaded constructor:initialises name and description of place
+    ~Place(); // destructor
 
     // functions
-    void displayPlace();
+    void displayPlace(); // function to display place's name and description
     
-    string getPlacename();
-
-    void PlaceStory();
+    string getPlacename(); // returns place name
+    string getPLaceDescription(); // returns place description
 
 };
 
