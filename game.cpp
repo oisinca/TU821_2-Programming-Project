@@ -1,5 +1,3 @@
-#pragma once
-
 #include <iostream>
 #include <limits>
 
@@ -116,7 +114,8 @@ void Game::Draw()
     {
         // put place to skip to with developer mode here
         //  inv.items[1] = "Revolver";
-        Enemy badguyTest(4, "Paul");
+        Inventory inv;
+        inv.take();
     }
 }
 

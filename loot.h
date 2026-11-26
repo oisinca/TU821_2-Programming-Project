@@ -6,7 +6,8 @@
 #include "tiers.h"
 using namespace std;
 
-//oc
+// Inventory is used through a reference by Loot.
+class Inventory;
 
 class Loot
 {

@@ -3,16 +3,16 @@
         {
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
-            "command": "C:/Users/oisin/Downloads/MinGW/MinGW/bin/g++.exe",
+            "command": "g++",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}\\*.cpp",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}\\game.exe"
             ],
             "options": {
-                "cwd": "C:/Users/oisin/Downloads/MinGW/MinGW/bin"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"

@@ -12,9 +12,9 @@ int Enemy::turnBasedCombat()
     Narrative nar;
     AtkBar bar;
     Health myHp;
-    int amo;
-    int strtAmo;  
-    int dmg;
+    int amo = 0;
+    int strtAmo = 0;
+    int dmg = 0;
     system("cls");
     nar.typingText("Entering Bossfight!\nKill",1);
     nar.typingText(getBaddyName(),1);
