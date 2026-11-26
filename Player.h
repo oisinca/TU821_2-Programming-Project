@@ -11,7 +11,7 @@ class Inventory;
 class Player
 {
 private:
-    Inventory* Inventory;
+    Inventory *Inventory;
 
 public:
 };
@@ -38,6 +38,7 @@ public:
     int getAmmo() { return ammo; }
     int getBonusHp() { return bonusHp; }
     string getName() { return gunName; }
+    ItemTier getTier() {return tier;}
 };
 
 class Inventory
@@ -49,7 +50,7 @@ private:
 public:
     Inventory();
     ~Inventory();
-    void take(int gCount, int aCount);
+    void take(int gunTake, int gOrA);
     GunsNArmour *items[2];
     GunsNArmour *getItem(int index); // add definition
 };

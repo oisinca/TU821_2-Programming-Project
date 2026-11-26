@@ -9,63 +9,63 @@ void HeadsOrTails::flipAnimate()
     hideCurs();
 
     pos.X = getX();
-    pos.Y = getY()-5;
-    SetConsoleCursorPosition(handle,pos);
+    pos.Y = getY() - 5;
+    SetConsoleCursorPosition(handle, pos);
     std::cout << "\nBeginning Flip... ";
     Sleep(100);
 
     pos.Y = getY();
-    SetConsoleCursorPosition(handle,pos);
+    SetConsoleCursorPosition(handle, pos);
     std::cout << "_";
-    SetConsoleCursorPosition(handle,pos);
+    SetConsoleCursorPosition(handle, pos);
     Sleep(getDelay());
     std::cout << "      ";
 
     pos.Y--;
     pos.X++;
-    SetConsoleCursorPosition(handle,pos);
+    SetConsoleCursorPosition(handle, pos);
     std::cout << "\\";
-    SetConsoleCursorPosition(handle,pos);
+    SetConsoleCursorPosition(handle, pos);
     Sleep(getDelay());
     std::cout << "      ";
 
     pos.X++;
     pos.X++;
     pos.Y--;
-    SetConsoleCursorPosition(handle,pos);
+    SetConsoleCursorPosition(handle, pos);
     std::cout << "|";
 
-    for(int i = 0; i<3; i++)
+    for (int i = 0; i < 3; i++)
     {
         getDelay();
         Sleep(getDelay());
-        SetConsoleCursorPosition(handle,pos);
+        SetConsoleCursorPosition(handle, pos);
         std::cout << "/";
         Sleep(getDelay());
-        SetConsoleCursorPosition(handle,pos);
-        std::cout<< "-";
+        SetConsoleCursorPosition(handle, pos);
+        std::cout << "-";
         Sleep(getDelay());
-        SetConsoleCursorPosition(handle,pos);
+        SetConsoleCursorPosition(handle, pos);
         std::cout << "\\";
         Sleep(getDelay());
-        SetConsoleCursorPosition(handle,pos);
+        SetConsoleCursorPosition(handle, pos);
         std::cout << "|";
     }
-    
+
     Sleep(getDelay());
-    SetConsoleCursorPosition(handle,pos);
+    SetConsoleCursorPosition(handle, pos);
     std::cout << "      ";
 
     pos.Y++;
-    SetConsoleCursorPosition(handle,pos);
+    SetConsoleCursorPosition(handle, pos);
     std::cout << "  /";
-    SetConsoleCursorPosition(handle,pos);
+    SetConsoleCursorPosition(handle, pos);
     Sleep(getDelay());
     std::cout << "      ";
 
     pos.Y++;
     pos.X++;
-    SetConsoleCursorPosition(handle,pos);
+    SetConsoleCursorPosition(handle, pos);
     std::cout << "  _";
     Sleep(100);
     std::cout << " .";
@@ -89,17 +89,17 @@ void HeadsOrTails::flipAnimate()
 void HeadsOrTails::gamble(HANDLE &handle, COORD &pos)
 {
     pos.X = getX();
-    pos.Y = getY()-9;
-    SetConsoleCursorPosition(handle,pos); 
+    pos.Y = getY() - 9;
+    SetConsoleCursorPosition(handle, pos);
     std::cout << "Pick: \n(1)Heads\n(2)Tails\n";
     char key = _getch();
-    switch(key)
+    switch (key)
     {
-    case(49):
+    case (49):
         choice = "Heads";
         std::cout << choice;
         break;
-    case(50):
+    case (50):
         choice = "Tails";
         std::cout << choice;
         break;
@@ -114,10 +114,10 @@ void HeadsOrTails::gamble(HANDLE &handle, COORD &pos)
 void HeadsOrTails::gnrtHRT()
 
 {
-    int HRT = rand() %2; 
-    if(HRT == 1)
+    int HRT = rand() % 2;
+    if (HRT == 1)
         result = "Heads";
-    else   
+    else
         result = "Tails";
 }
 
@@ -138,8 +138,8 @@ void HeadsOrTails::showCurs()
 
 HeadsOrTails::HeadsOrTails()
 {
-    setXY(0,10);
+    setXY(0, 10);
     setDelay(100);
 }
 
-HeadsOrTails::~HeadsOrTails(){}
+HeadsOrTails::~HeadsOrTails() {}

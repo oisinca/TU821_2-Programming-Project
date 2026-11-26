@@ -1,6 +1,6 @@
 #pragma once
 
-enum class ItemTier 
+enum class ItemTier
 {
     Gun,
     Armour

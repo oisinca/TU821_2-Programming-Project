@@ -4,8 +4,7 @@
 
 #include "loot.h"
 #include "Player.h"
-
-using namespace std;
+#include "narrative.h"
 
 // oc
 
@@ -13,50 +12,81 @@ Loot::~Loot()
 {
 }
 
-Loot::Loot(string x, int y)
+Loot::Loot()
 {
-    Inventory inv;
-    if (x == "Chest") // Loot menu for chests
-    {
-        if (y == 1) // Loot menu for chest 1
-        {
-            chest_menu(1, inv); // first loot menu
-        }
-        else if (y == 2) // Loot menu for chest 2 (just a placeholder for now, can be changed later)
-        {
-            //   loot_menu(2);  // (placeholder for now) second loot menu
-        }
-    }
 }
 
-void Loot::check_inventory(ItemTier tier)
+bool Loot::check_inventory_empty(short x, Inventory &inv)
 {
-    int checker;
-    switch (tier)
-    {
-    }
+
+    if (inv.items[x] == NULL)
+        return true;
+
+    return false;
 }
 
-void Loot::chest_menu(short y, Inventory& inv)
+void Loot::chest_menu(short x, short y, Inventory &inv)
+// pass in any int for x and y depending on what gun or armour
+// you need (look at default Inventory Constructor), and put inv in
+//... syntax: object.chest_meu(0,5,inv);
+
 {
-    if(y == 1)
+    int g; // for checking what type of item it is
+    int h; // checking same as above, for second input weapon
+           // if we add consumables, repeat the if below for
+           //  ItemTier::Consumable; eg... else {g = 2} // else {h = 2}
+    if (inv.getItem(x)->getTier() == ItemTier::Gun)
+        g = 0;
+    else if (inv.getItem(x)->getTier() == ItemTier::Armour)
+        g = 1;
+
+    if (inv.getItem(y)->getTier() == ItemTier::Gun)
+        h = 0;
+    else if (inv.getItem(y)->getTier() == ItemTier::Armour)
+        h = 1;
+
+    Narrative nar;
+
+    nar.typingText("What gun would you like?\n", 1);
+    nar.typingText("1. ", 1);
+    nar.typingText(inv.getItem(x)->getName(), 1);
+    std::cout << "\n";
+
+    nar.typingText("2. ", 1);
+    nar.typingText(inv.getItem(y)->getName(), 1);
+    std::cout << "\n";
+
+    char choice = _getch();
+
+    switch (choice)
     {
-        std::cout << "What gun would you like?\n";
-        std::cout << "1. " << "...";
-        char choice = _getch();
-        switch(choice)
+    case '1': // taking option x
+        if (check_inventory_empty(x, inv))
+            inv.take(x, 0); // take gun (revolver = 0), for slot 0
+        else
         {
-            case '1':
-                inv.items[0] = inv.getItem(0);
-                break;
-
-            case '2':
-                inv.items[1] = inv.getItem(1);
-                break;
-
-            default:
-                break;
+            nar.typingText("You already have a ", 1);
+            nar.typingText(inv.items[g]->getName(), 1);
+            nar.typingText(" in your inventory, would you like to swap it for ", 1);
+            nar.typingText(inv.getItem(x)->getName(), 1);
+            std::cout << "\n";
         }
+        break;
+
+    case '2': // taking option y
+        if (check_inventory_empty(y, inv))
+            inv.take(y, 0); // take gun (revolver = 0), for slot 0
+        else
+        {
+        nar.typingText("You already have a", 1);
+        nar.typingText(inv.items[h]->getName(), 1);
+        nar.typingText(" in your inventory, would you like to swap it for ", 1);
+        nar.typingText(inv.getItem(y)->getName(), 1);
+        }   
+        break;
+
+    default:
+        break;
     }
 }
 

@@ -29,6 +29,5 @@ string Place::getPLaceDescription() // returns place desc
     return PlaceDescription;
 }
 
-Place::~Place()
-{
-}
+Place::~Place() = default;
+

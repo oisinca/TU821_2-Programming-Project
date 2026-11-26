@@ -2,7 +2,7 @@
 
 Health::Health()
 {
-    setHp(3); //sets hp at start of game to 3
+    setHp(3); // sets hp at start of game to 3
     setXtraHp(0);
     setHpBarCasStrt('[');
     setHpBarCasEnd(']');
@@ -11,9 +11,8 @@ Health::Health()
     setXtrHpCasStrt('{');
     setXtrHpCasEnd('}');
     setXtrHpChar('+');
-    setXY(20,1);
+    setXY(20, 1);
 }
-
 
 Health::~Health() = default;
 
@@ -41,6 +40,5 @@ void Health::takeDamage(int damage)
 
 void Health::showHp()
 {
-    // must show Health points: [###], each # is a health point, extra heath/armour: [###]{++} 
-    
+    // must show Health points: [###], each # is a health point, extra heath/armour: [###]{++}
 }

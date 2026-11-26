@@ -6,7 +6,7 @@
             "request": "launch",
             "program": "${workspaceFolder}\\game.exe",
             "args": [],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,

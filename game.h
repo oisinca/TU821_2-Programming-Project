@@ -10,7 +10,8 @@
 #include "AtkBar.h"
 #include "PlaceManager.h"
 
-enum GameState{   
+enum GameState
+{
     MENU,
     Play,
     Settings,
@@ -19,7 +20,8 @@ enum GameState{
     DEVSKIPPER,
 };
 
-class Game{
+class Game
+{
 private:
     bool g_isRunning;
 
@@ -29,11 +31,11 @@ private:
     void Update();
     void Draw();
     GameState currentState;
-    
+
     // game objects
-    Narrative story; // creates a narrative object belonging to game
+    Narrative story;      // creates a narrative object belonging to game
     PlaceManager manager; // creates a placemanager object belonging to game
-   
+
     // starts the game
     void startAdventure(); // controls the progression through the locations
 
@@ -42,7 +44,4 @@ public:
     ~Game();
 
     void Run();
-
-
 };
-

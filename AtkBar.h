@@ -4,7 +4,7 @@
 #include <windows.h>
 #include <conio.h>
 
-//oc
+// oc
 class AtkBar
 {
 private:
@@ -16,45 +16,52 @@ private:
     int numberRuns;
     int barSpeed;
 
-    void setBarLength(int lgth){length = lgth;};
-    void setBlankSpots(char blank){blankSpots = blank;};  
-    void setCursor(char cur){cursor = cur;};
-    void setBarCasingStart(char casing){barCasingStart = casing;};
-    void setBarCasingEnd(char casing){barCasingEnd = casing;};
-    void setXY(int xPos, int yPos){x = xPos, y = yPos;};
-    void setNumRuns(int num){numberRuns = num;};
-    void setAttackChar(char figure){attackAreaCharacter = figure;};
-    void setBarSpeed(int spd){barSpeed = spd;};
+    void setBarLength(int lgth) { length = lgth; };
+    void setBlankSpots(char blank) { blankSpots = blank; };
+    void setCursor(char cur) { cursor = cur; };
+    void setBarCasingStart(char casing) { barCasingStart = casing; };
+    void setBarCasingEnd(char casing) { barCasingEnd = casing; };
+    void setXY(int xPos, int yPos) { x = xPos, y = yPos; };
+    void setNumRuns(int num) { numberRuns = num; };
+    void setAttackChar(char figure) { attackAreaCharacter = figure; };
+    void setBarSpeed(int spd) { barSpeed = spd; };
 
     void createBar(HANDLE console);
 
-    int getX(){return x;};
-    int getY(){return y;};
-    int getNumRuns(){return numberRuns;};
-    int getAttackPoint1(){return firstAttackPoint;};
-    int getAttackPoint2(){return secondAttackPoint;};
-    char getAttackChar(){return attackAreaCharacter;};
-    
+    int getX() { return x; };
+    int getY() { return y; };
+    int getNumRuns() { return numberRuns; };
+    int getAttackPoint1() { return firstAttackPoint; };
+    int getAttackPoint2() { return secondAttackPoint; };
+    char getAttackChar() { return attackAreaCharacter; };
+
     int firstAttackPoint, secondAttackPoint;
     void randAttackArea();
-    int getBarLength(){return length;};
-    char getBlankSpots(){return blankSpots;};
-    char getCursor(){return cursor;};
-    char getBarCasingStart(){return barCasingStart;};
-    char getBarCasingEnd(){return barCasingEnd;}; 
-    
+    int getBarLength() { return length; };
+    char getBlankSpots() { return blankSpots; };
+    char getCursor() { return cursor; };
+    char getBarCasingStart() { return barCasingStart; };
+    char getBarCasingEnd() { return barCasingEnd; };
+
     int getBarSpeed()
     {
-        if (barSpeed<=0)
+        if (barSpeed <= 0)
         {
             barSpeed = 1;
         }
-    return barSpeed;
+        return barSpeed;
     }
 
 public:
     AtkBar();
     ~AtkBar();
-    int initAttkBar();
-    
+    void gotoXY(short x, short y)
+    {
+        HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+        COORD pos;
+        pos.X = x;
+        pos.Y = y;
+        SetConsoleCursorPosition(handle, pos);
+    }
+    bool initAttkBar();
 };

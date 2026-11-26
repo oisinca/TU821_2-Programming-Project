@@ -8,27 +8,23 @@
 class Publican
 {
 private:
-void goToBar();
-void investigateOutside();
-std::string bartenderConv();
-
+    void goToBar();
+    void investigateOutside();
+    std::string bartenderConv();
 
 public:
-std::string drink;
-int lockedLvl;
+    std::string drink;
+    int lockedLvl;
 
-Publican();
-~Publican();
-Publican(int lkd, int dmg)
-{
-lockedLvl = lkd;
-
-}
-void pubText();
-
+    Publican();
+    ~Publican();
+    Publican(int lkd, int dmg)
+    {
+        lockedLvl = lkd;
+    }
+    void pubText();
 };
 
 class shot : public Publican
 {
-
 };
