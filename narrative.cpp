@@ -131,6 +131,26 @@ void Narrative::homeDialougue()
     // still need to figure out what to do with in between dialogue
 }
 
+void Narrative::barDialogue()
+{   
+    cout << "bar stuff" << endl;
+}
+
+void Narrative::shticksDialogue()
+{   
+    cout << "outlaw stuff" << endl;
+}
+
+void Narrative::churchDialogue()
+{
+    cout << "holy spiel" << endl;
+}
+
+void Narrative::caveDialogue()
+{
+    cout << " Paul's Cave" << endl;
+}
+
 void Narrative::dialogueOneA()
 {
     char choice;
