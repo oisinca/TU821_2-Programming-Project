@@ -49,7 +49,7 @@ private:
 public:
     Inventory();
     ~Inventory();
-    void take();
+    void take(int gCount, int aCount);
     GunsNArmour *items[2];
     GunsNArmour *getItem(int index); // add definition
 };

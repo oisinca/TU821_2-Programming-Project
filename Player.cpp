@@ -3,14 +3,7 @@
 Inventory::Inventory()
 {
     allGunsNArmour = new GunsNArmour*[6]; //number can change idk how many guns we will need.
-        allGunsNArmour[0] = new GunsNArmour("Revolver", ItemTier::Gun, 2, 6, 0);
-        allGunsNArmour[1] = new GunsNArmour("Shotgun", ItemTier::Gun, 10, 2, 0);
-        allGunsNArmour[2] = new GunsNArmour("Platinum Deagle", ItemTier::Gun, 8, 7, 0);
-        allGunsNArmour[3] = new GunsNArmour("Holy Bible", ItemTier::Gun, 100, 100, 3);
-        allGunsNArmour[4] = new GunsNArmour("AK-47", ItemTier::Gun, 3, 30, 0);
-        allGunsNArmour[5] = new GunsNArmour("Leather Jacket", ItemTier::Armour, 0, 0, 2);
-        items[0] = nullptr;
-        items[1] = nullptr;
+
 }
 
 Inventory::~Inventory()
@@ -22,13 +15,12 @@ Inventory::~Inventory()
     delete[] allGunsNArmour;
 }
 
-void Inventory::take()
+void Inventory::take(int gCount, int aCount)
 {
-    cout << "wanna take: " << allGunsNArmour[0]->getName() << endl;
+    cout << "wanna take: " << allGunsNArmour[gCount]->getName() << endl;
     items[0] = allGunsNArmour[0];
-    cout << "armour to take: " << allGunsNArmour[5]->getName() << endl;
+    cout << "armour to take: " << allGunsNArmour[aCount]->getName() << endl;
     items[1] = allGunsNArmour[5];
-
 }
 
 GunsNArmour *Inventory::getItem(int index)
