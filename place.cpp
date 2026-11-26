@@ -3,6 +3,8 @@
 
 Place::Place()
 {
+    PlaceName = "N/A";
+    PlaceDescription = "N/A";
 }
 
 Place::Place(string name, string desc)
@@ -11,21 +13,22 @@ Place::Place(string name, string desc)
     PlaceDescription = desc;
 }
 
-Place::~Place()
+void Place::displayPlace() // displays name and desc
 {
+    cout << "You have entered: " << PlaceName << endl;
+    cout << PlaceDescription << endl;
 }
 
-void Place::displayPlace()
-{
-    cout << "You have entered " << PlaceName << endl;
-}
-
-string Place::getPlacename()
+string Place::getPlacename() // returns place name
 {
     return PlaceName;
 }
 
-void Place::PlaceStory()
+string Place::getPLaceDescription() // returns place desc
 {
-    
+    return PlaceDescription;
+}
+
+Place::~Place()
+{
 }

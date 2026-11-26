@@ -69,7 +69,6 @@ void Narrative::intro() //intro sequence of the game, this is the first part of 
         cont_clr();
     }
     
-    outside_house();
 }
 
 void Narrative::outside_house()
@@ -119,6 +118,16 @@ void Narrative::cont_clr()
     cout << "\n\n";
     system("pause");
     system("cls");
+}
+
+ // added the homesequence here which calls 
+ // dialogue options related to home
+void Narrative::homeDialougue() 
+{
+    intro();
+    outside_house();
+    dialogueOneA();
+    // still need to figure out what to do with in between dialogue
 }
 
 void Narrative::dialogueOneA()

@@ -21,6 +21,11 @@ public:
     void intro();
     void cont_clr();
     
-
+    //area dialogue - public so we can call them
+    void homeDialougue();
+    void barDialogue();
+    void shticksDialogue();
+    void churchDialogue();
+    void caveDialogue();
 
 };
