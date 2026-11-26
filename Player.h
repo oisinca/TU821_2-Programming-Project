@@ -1,18 +1,19 @@
 #pragma once
 
 #include <iostream>
-
+#include <conio.h>
 #include "tiers.h"
 
 using namespace std;
 
+class Inventory;
+
 class Player
 {
 private:
-    Inventory Inventory;
+    Inventory* Inventory;
 
 public:
-    string holding[2]{"Empty", "Empty"};
 };
 
 class GunsNArmour
@@ -48,7 +49,7 @@ private:
 public:
     Inventory();
     ~Inventory();
-
+    void take();
     GunsNArmour *items[2];
     GunsNArmour *getItem(int index); // add definition
 };

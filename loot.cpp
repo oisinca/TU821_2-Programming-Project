@@ -15,12 +15,12 @@ Loot::~Loot()
 
 Loot::Loot(string x, int y)
 {
-    Inventory* inv;
+    Inventory inv;
     if (x == "Chest") // Loot menu for chests
     {
         if (y == 1) // Loot menu for chest 1
         {
-            chest_menu(1, *inv); // first loot menu
+            chest_menu(1, inv); // first loot menu
         }
         else if (y == 2) // Loot menu for chest 2 (just a placeholder for now, can be changed later)
         {
@@ -47,16 +47,15 @@ void Loot::chest_menu(short y, Inventory& inv)
         switch(choice)
         {
             case '1':
-            inv.items;
-            break;
+                inv.items[0] = inv.getItem(0);
+                break;
 
             case '2':
-
-            break;
+                inv.items[1] = inv.getItem(1);
+                break;
 
             default:
-
-
+                break;
         }
     }
 }

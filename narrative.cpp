@@ -227,8 +227,10 @@ void Narrative::ranAway()
 void Narrative::DoillSequence()
 {
 //Doill sequence here
+// oisin sucks
 cout << "is this working\n";
 cout << "is it stillworking ";
+cout << "idk is it" ;
 }
 
 void Narrative::typingText(std::string text, int delay)
