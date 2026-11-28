@@ -32,3 +32,9 @@ GunsNArmour *Inventory::getItem(int index)
 {
     return allGunsNArmour[index];
 }
+
+Player::Player()
+{
+    setHp(3);
+    setXtraHp(0);
+}

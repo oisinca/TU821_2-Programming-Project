@@ -1,16 +1,14 @@
 #pragma once
 
-class Health
+class HealthBar
 {
 private:
-    int hp, xtraHp, baddyHp;
     int length;
     char healthChars, extraHealthChar;
     char hpBarCasingStart, hpBarCasingEnd, extraHpCasingStart, extraHpCasingEnd;
     char attackAreaCharacter;
     int x, y;
 
-    void setHp(int hlth) { hp = hlth; }
     void setHpBarLgth(int lgth) { length = lgth; }
     void setHpChar(char blank) { healthChars = blank; }
     void setHpBarCasStrt(char casing) { hpBarCasingStart = casing; }
@@ -31,13 +29,8 @@ private:
     int getY() { return y; }
 
 public:
-    int getHp() { return hp; }
-    int getXtraHp() { return xtraHp; }
-    void showHp();
-    void setXtraHp(int xtr) { xtraHp = xtr; }
-    void addXtraHp(int xtr) { xtraHp += xtr; }
-    void takeDamage(int damage);
 
-    Health();
-    ~Health();
+    void showHp();
+    HealthBar();
+    ~HealthBar();
 };

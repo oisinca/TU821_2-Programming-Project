@@ -248,7 +248,7 @@ void Narrative::ranAway()
 void Narrative::DoillSequence()
 {
     // Doill sequence here
-    //  oisin sucks
+    //  oisin sucks  - excuse me!
     cout << "is this working\n";
     cout << "is it stillworking ";
     cout << "idk is it";

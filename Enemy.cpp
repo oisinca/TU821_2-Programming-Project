@@ -2,7 +2,7 @@
 #include <windows.h>
 
 #include "Enemy.h"
-#include "Health.h"
+#include "HealthBar.h"
 #include "AtkBar.h"
 #include "narrative.h"
 #include "Player.h"
@@ -10,8 +10,6 @@ int Enemy::turnBasedCombat(Inventory &inventory)
 {
     Narrative nar;
     AtkBar bar;
-    Health myHp;
-
     // creating local ammo and damage.
     // creating starting ammo (stays constant once set at start of combat) to reload with later.
     int amo = 0;
@@ -117,11 +115,20 @@ int Enemy::turnBasedCombat(Inventory &inventory)
     return 0;
 }
 
-Enemy::Enemy(int eHp, std::string name, Inventory &inventory)
+void Enemy::baddysGo(int dif)
+{
+    Player player;
+    int damageDoer = rand() %dif;
+    //add dealing damage, add amount of damage to deal, take it away from hp, 
+    //if hp == 0 , return to start screen... 
+}
+
+Enemy::Enemy(int eHp, std::string name, int difficulty, Inventory &inventory)
 {
     setBaddyHp(eHp);
     setBaddyName(name);
     turnBasedCombat(inventory);
+    setDifficulty(difficulty);
 }
 void Enemy::reload(int *ammos, int maxAmmos)
 {

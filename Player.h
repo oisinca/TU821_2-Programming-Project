@@ -13,7 +13,23 @@ class Player
 private:
     Inventory *Inventory;
 
+    int hp;
+    int xtraHp;
+
 public:
+
+    Player();
+    ~Player();
+
+    int getHp() { return hp; }
+    void setHp(int hlth) { hp = hlth; }
+
+    int getXtraHp() { return xtraHp; }
+    void setXtraHp(int xtr) { xtraHp = xtr; }
+    
+    void addXtraHp(int xtr) { xtraHp += xtr; }
+    
+    void takeDamage(int damage); // may not need this...
 };
 
 class GunsNArmour
